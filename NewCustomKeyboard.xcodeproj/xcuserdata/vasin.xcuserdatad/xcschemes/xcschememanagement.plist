@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>NewCustomKeyboard.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>new custom keyboard.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>new2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>890DB6DB1D66109F000B01D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>890DB6EB1D6620B4000B01D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>892F2B031D66103800AB874F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>892F2B171D66103800AB874F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>892F2B221D66103800AB874F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
