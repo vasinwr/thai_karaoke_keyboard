@@ -38,30 +38,8 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
         self.nextKeyboardButton.bottomAnchor.constraintEqualToAnchor(self.view.bottomAnchor).active = true
         
+
         //addition
-        /*
-        let buttonTitles = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
-        var buttons :[UIButton] = [UIButton]()
-        let keyboardRowView = UIView(frame: CGRectMake(0, 0, 320, 50))
-        
-        for buttonTitle in buttonTitles{
-           
-            print(buttonTitle)
-            let button = createButtonWithTitle(buttonTitle)
-            buttons.append(button)
-            keyboardRowView.addSubview(button)
-        }
- 
-        
-        self.view.addSubview(keyboardRowView)
- */
-        /*
-        // addition
-        let button = createButtonWithTitle("A")
-        self.view.addSubview(button)
-        let button2 = createButtonWithTitle("B")
-        self.view.addSubview(button2)
-        */
         
         let buttonTitles = ["Q", "W", "E", "R", "T", "Y"]
         let buttons = createButtons(buttonTitles)
@@ -74,6 +52,13 @@ class KeyboardViewController: UIInputViewController {
         self.view.addSubview(topRow)
         
         addConstraints(buttons, containingView: topRow)
+ 
+        
+        var label = UILabel(frame: CGRectMake(0, 0, 320, 40))
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "I'am a test label"
+        self.view.addSubview(label)
+ 
     }
     
     func createButtons(titles: [String]) -> [UIButton] {
@@ -136,33 +121,7 @@ class KeyboardViewController: UIInputViewController {
             containingView.addConstraints([topConstraint, bottomConstraint, rightConstraint, leftConstraint])
         }
     }
-    
-    /*
-    func createButtonWithTitle(title: String) -> UIButton {
-    
-        let button = UIButton(type: .System) as UIButton
-        button.frame = CGRectMake(0, 0, 20, 20)
-        button.setTitle(title, forState: .Normal)
-        button.sizeToFit()
-        button.titleLabel?.font = UIFont.systemFontOfSize(15)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
-        button.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
-    
-        button.addTarget(self, action: "didTapButton:", forControlEvents: .TouchUpInside)
-    
-        return button
-    }
- 
-    func didTapButton(sender: AnyObject?) {
-        
-        let button = sender as! UIButton
-        let title = button.titleForState(.Normal)
-        let proxy = textDocumentProxy as UITextDocumentProxy
-        
-        proxy.insertText(title!)
-    }
-    */
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

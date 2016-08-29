@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		890DB6E31D66109F000B01D0 /* new custom keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 890DB6DC1D66109F000B01D0 /* new custom keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		890DB6EF1D6620B4000B01D0 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890DB6EE1D6620B4000B01D0 /* KeyboardViewController.swift */; };
 		890DB6F31D6620B4000B01D0 /* new2.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 890DB6EC1D6620B4000B01D0 /* new2.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		892F2B081D66103800AB874F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F2B071D66103800AB874F /* AppDelegate.swift */; };
@@ -20,13 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		890DB6E11D66109F000B01D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 892F2AFC1D66103800AB874F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 890DB6DB1D66109F000B01D0;
-			remoteInfo = "new custom keyboard";
-		};
 		890DB6F11D6620B4000B01D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 892F2AFC1D66103800AB874F /* Project object */;
@@ -58,7 +50,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				890DB6F31D6620B4000B01D0 /* new2.appex in Embed App Extensions */,
-				890DB6E31D66109F000B01D0 /* new custom keyboard.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +57,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		890DB6DC1D66109F000B01D0 /* new custom keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "new custom keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		890DB6EC1D6620B4000B01D0 /* new2.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = new2.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		890DB6EE1D6620B4000B01D0 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		890DB6F01D6620B4000B01D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,13 +76,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		890DB6D91D66109F000B01D0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		890DB6E91D6620B4000B01D0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,7 +133,6 @@
 				892F2B041D66103800AB874F /* NewCustomKeyboard.app */,
 				892F2B181D66103800AB874F /* NewCustomKeyboardTests.xctest */,
 				892F2B231D66103800AB874F /* NewCustomKeyboardUITests.xctest */,
-				890DB6DC1D66109F000B01D0 /* new custom keyboard.appex */,
 				890DB6EC1D6620B4000B01D0 /* new2.appex */,
 			);
 			name = Products;
@@ -190,23 +172,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		890DB6DB1D66109F000B01D0 /* new custom keyboard */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 890DB6E61D66109F000B01D0 /* Build configuration list for PBXNativeTarget "new custom keyboard" */;
-			buildPhases = (
-				890DB6D81D66109F000B01D0 /* Sources */,
-				890DB6D91D66109F000B01D0 /* Frameworks */,
-				890DB6DA1D66109F000B01D0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "new custom keyboard";
-			productName = "new custom keyboard";
-			productReference = 890DB6DC1D66109F000B01D0 /* new custom keyboard.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		890DB6EB1D6620B4000B01D0 /* new2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 890DB6F41D6620B4000B01D0 /* Build configuration list for PBXNativeTarget "new2" */;
@@ -236,7 +201,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				890DB6E21D66109F000B01D0 /* PBXTargetDependency */,
 				890DB6F21D6620B4000B01D0 /* PBXTargetDependency */,
 			);
 			name = NewCustomKeyboard;
@@ -290,9 +254,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Vasin W";
 				TargetAttributes = {
-					890DB6DB1D66109F000B01D0 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					890DB6EB1D6620B4000B01D0 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -325,20 +286,12 @@
 				892F2B031D66103800AB874F /* NewCustomKeyboard */,
 				892F2B171D66103800AB874F /* NewCustomKeyboardTests */,
 				892F2B221D66103800AB874F /* NewCustomKeyboardUITests */,
-				890DB6DB1D66109F000B01D0 /* new custom keyboard */,
 				890DB6EB1D6620B4000B01D0 /* new2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		890DB6DA1D66109F000B01D0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		890DB6EA1D6620B4000B01D0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,13 +326,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		890DB6D81D66109F000B01D0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		890DB6E81D6620B4000B01D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,11 +362,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		890DB6E21D66109F000B01D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 890DB6DB1D66109F000B01D0 /* new custom keyboard */;
-			targetProxy = 890DB6E11D66109F000B01D0 /* PBXContainerItemProxy */;
-		};
 		890DB6F21D6620B4000B01D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 890DB6EB1D6620B4000B01D0 /* new2 */;
@@ -458,28 +399,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		890DB6E41D66109F000B01D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "new custom keyboard/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "vasinwr.NewCustomKeyboard.new-custom-keyboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		890DB6E51D66109F000B01D0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "new custom keyboard/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "vasinwr.NewCustomKeyboard.new-custom-keyboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		890DB6F51D6620B4000B01D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -589,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NewCustomKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -601,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NewCustomKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -658,14 +579,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		890DB6E61D66109F000B01D0 /* Build configuration list for PBXNativeTarget "new custom keyboard" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				890DB6E41D66109F000B01D0 /* Debug */,
-				890DB6E51D66109F000B01D0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		890DB6F41D6620B4000B01D0 /* Build configuration list for PBXNativeTarget "new2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
