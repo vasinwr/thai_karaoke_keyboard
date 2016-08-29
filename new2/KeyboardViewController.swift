@@ -9,6 +9,8 @@
 import UIKit
 
 class KeyboardViewController: UIInputViewController {
+    
+    var label :UILabel? = nil
 
     @IBOutlet var nextKeyboardButton: UIButton!
 
@@ -41,23 +43,33 @@ class KeyboardViewController: UIInputViewController {
 
         //addition
         
-        let buttonTitles = ["Q", "W", "E", "R", "T", "Y"]
-        let buttons = createButtons(buttonTitles)
-        let topRow = UIView(frame: CGRectMake(0, 40, 320, 40))
+        let buttonTitles1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
+        let buttonTitles2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
         
-        for button in buttons {
+        let buttons1 = createButtons(buttonTitles1)
+        let buttons2 = createButtons(buttonTitles2)
+        
+        let topRow = UIView(frame: CGRectMake(0, 40, 320, 40))
+        let secRow = UIView(frame: CGRectMake(0, 80, 320, 40))
+        
+        for button in buttons1 {
             topRow.addSubview(button)
+        }
+        for button in buttons2 {
+            secRow.addSubview(button)
         }
         
         self.view.addSubview(topRow)
+        self.view.addSubview(secRow)
         
-        addConstraints(buttons, containingView: topRow)
+        addConstraints(buttons1, containingView: topRow)
+        addConstraints(buttons2, containingView: secRow)
  
         
-        var label = UILabel(frame: CGRectMake(0, 0, 320, 40))
-        label.textAlignment = NSTextAlignment.Center
-        label.text = "I'am a test label"
-        self.view.addSubview(label)
+        label = UILabel(frame: CGRectMake(0, 0, 160, 40))
+        label!.textAlignment = NSTextAlignment.Center
+        label!.text = ""
+        self.view.addSubview(label!)
  
     }
     
@@ -82,6 +94,8 @@ class KeyboardViewController: UIInputViewController {
         let button = sender as! UIButton
         let title = button.titleForState(.Normal)
         (textDocumentProxy as UIKeyInput).insertText(title!)
+        
+        label!.text = label!.text! + title!
     }
     
     func addConstraints(buttons: [UIButton], containingView: UIView){
