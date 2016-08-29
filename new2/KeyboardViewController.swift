@@ -43,7 +43,7 @@ class KeyboardViewController: UIInputViewController {
         
         let buttonTitles = ["Q", "W", "E", "R", "T", "Y"]
         let buttons = createButtons(buttonTitles)
-        let topRow = UIView(frame: CGRectMake(0, 0, 320, 40))
+        let topRow = UIView(frame: CGRectMake(0, 40, 320, 40))
         
         for button in buttons {
             topRow.addSubview(button)
