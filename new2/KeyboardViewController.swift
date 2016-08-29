@@ -45,12 +45,15 @@ class KeyboardViewController: UIInputViewController {
         
         let buttonTitles1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
         let buttonTitles2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
+        let buttonTitles3 = ["Z", "X", "C", "V", "B", "N", "M"]
         
         let buttons1 = createButtons(buttonTitles1)
         let buttons2 = createButtons(buttonTitles2)
+        let buttons3 = createButtons(buttonTitles3)
         
         let topRow = UIView(frame: CGRectMake(0, 40, 320, 40))
         let secRow = UIView(frame: CGRectMake(0, 80, 320, 40))
+        let thrRow = UIView(frame: CGRectMake(40, 120, 240, 40))
         
         for button in buttons1 {
             topRow.addSubview(button)
@@ -58,12 +61,17 @@ class KeyboardViewController: UIInputViewController {
         for button in buttons2 {
             secRow.addSubview(button)
         }
+        for button in buttons3 {
+            thrRow.addSubview(button)
+        }
         
         self.view.addSubview(topRow)
         self.view.addSubview(secRow)
+        self.view.addSubview(thrRow)
         
         addConstraints(buttons1, containingView: topRow)
         addConstraints(buttons2, containingView: secRow)
+        addConstraints(buttons3, containingView: thrRow)
  
         
         label = UILabel(frame: CGRectMake(0, 0, 160, 40))
