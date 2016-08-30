@@ -173,9 +173,18 @@ class KeyboardViewController: UIInputViewController {
         let suggestions = createButtons(lookupSuggestions(title))
         
         for button in suggestions {
+            button.alpha = 0
             suggestionsContainer.addSubview(button)
         }
         addConstraints(suggestions, containingView: suggestionsContainer)
+        var delay = 0.0
+        for button in suggestions {
+            delay += 0.2
+            UIView.animateWithDuration(delay, animations: {
+                button.alpha = 1.0
+            })
+        }
+
         
     }
     
