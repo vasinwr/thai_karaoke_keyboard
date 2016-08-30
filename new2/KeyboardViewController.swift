@@ -47,7 +47,7 @@ class KeyboardViewController: UIInputViewController {
         let buttonTitles1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
         let buttonTitles2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
         let buttonTitles3 = ["Z", "X", "C", "V", "B", "N", "M"]
-        let buttonTitles4 = ["space"]
+        let buttonTitles4 = ["space", "bs"]
         
         let buttons1 = createButtons(buttonTitles1)
         let buttons2 = createButtons(buttonTitles2)
@@ -105,6 +105,8 @@ class KeyboardViewController: UIInputViewController {
             button.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
             if(title == "space"){
                 button.addTarget(self, action: "spacePressed:", forControlEvents: .TouchUpInside)
+            } else if(title == "bs") {
+                button.addTarget(self, action: "backspacePressed:", forControlEvents: .TouchUpInside)
             } else {
                 button.addTarget(self, action: "keyPressed:", forControlEvents: .TouchUpInside)
             }
@@ -112,6 +114,25 @@ class KeyboardViewController: UIInputViewController {
         }
     
     return buttons
+    }
+    
+    func createSuggestionButtons(titles: [String]) -> [UIButton] {
+        
+        var buttons :[UIButton] = [UIButton]()
+        
+        for title in titles {
+            let button = UIButton(type: .System) as UIButton
+            button.setTitle(title, forState: .Normal)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+            button.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
+
+            button.addTarget(self, action: "suggestionPressed:", forControlEvents: .TouchUpInside)
+            
+            buttons.append(button)
+        }
+        
+        return buttons
     }
     
     func keyPressed(sender: AnyObject?) {
@@ -127,6 +148,26 @@ class KeyboardViewController: UIInputViewController {
         (textDocumentProxy as UIKeyInput).insertText(" ")
         
         createSuggestion(label!.text!)
+    }
+    
+    func suggestionPressed(sender: AnyObject?) {
+        let endlabel = label!.text!.characters.count
+        for i in 0...endlabel{
+            textDocumentProxy.deleteBackward()
+        }
+        
+        let button = sender as! UIButton
+        let title = button.titleForState(.Normal)
+        (textDocumentProxy as UIKeyInput).insertText(title!)
+        
+        label!.text = ""
+    }
+    
+    func backspacePressed(sender: AnyObject?) {
+        if(label!.text! != ""){
+            label!.text! = label!.text!.substringToIndex(label!.text!.endIndex.predecessor())
+        }
+        textDocumentProxy.deleteBackward()
     }
     
     func addConstraints(buttons: [UIButton], containingView: UIView){
@@ -170,7 +211,7 @@ class KeyboardViewController: UIInputViewController {
     func createSuggestion(title : String) {
         //TODO: clear suggestionsContainer
         
-        let suggestions = createButtons(lookupSuggestions(title))
+        let suggestions = createSuggestionButtons(lookupSuggestions(title))
         
         for button in suggestions {
             button.alpha = 0
