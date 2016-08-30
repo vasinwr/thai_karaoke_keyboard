@@ -11,6 +11,7 @@ import UIKit
 class KeyboardViewController: UIInputViewController {
     
     var label :UILabel? = nil
+    let suggestionsContainer = UIView(frame: CGRectMake(160, 0, 160, 40))
 
     @IBOutlet var nextKeyboardButton: UIButton!
 
@@ -73,12 +74,16 @@ class KeyboardViewController: UIInputViewController {
         addConstraints(buttons2, containingView: secRow)
         addConstraints(buttons3, containingView: thrRow)
  
-        
+        /* label - top left of keyboard */
         label = UILabel(frame: CGRectMake(0, 0, 160, 40))
         label!.textAlignment = NSTextAlignment.Center
         label!.text = ""
         self.view.addSubview(label!)
- 
+        
+        /* suggestions - top right */
+        self.view.addSubview(suggestionsContainer)
+        createSuggestion("a")
+        
     }
     
     func createButtons(titles: [String]) -> [UIButton] {
@@ -142,6 +147,23 @@ class KeyboardViewController: UIInputViewController {
             
             containingView.addConstraints([topConstraint, bottomConstraint, rightConstraint, leftConstraint])
         }
+    }
+    
+    func createSuggestion(title : String) {
+        //TODO: clear suggestionsContainer
+        
+        let suggestions = createButtons(lookupSuggestions(title))
+        
+        for button in suggestions {
+            suggestionsContainer.addSubview(button)
+        }
+        addConstraints(suggestions, containingView: suggestionsContainer)
+        
+    }
+    
+    /* now a dummy function. TODO: implement real lookup */
+    func lookupSuggestions(title: String) -> [String] {
+        return ["ครับ" , "คับ", "ขับ"]
     }
 
     
