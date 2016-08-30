@@ -47,14 +47,17 @@ class KeyboardViewController: UIInputViewController {
         let buttonTitles1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
         let buttonTitles2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
         let buttonTitles3 = ["Z", "X", "C", "V", "B", "N", "M"]
+        let buttonTitles4 = ["space"]
         
         let buttons1 = createButtons(buttonTitles1)
         let buttons2 = createButtons(buttonTitles2)
         let buttons3 = createButtons(buttonTitles3)
+        let buttons4 = createButtons(buttonTitles4)
         
         let topRow = UIView(frame: CGRectMake(0, 40, 320, 40))
         let secRow = UIView(frame: CGRectMake(0, 80, 320, 40))
         let thrRow = UIView(frame: CGRectMake(40, 120, 240, 40))
+        let fthRow = UIView(frame: CGRectMake(0, 160, 320, 40))
         
         for button in buttons1 {
             topRow.addSubview(button)
@@ -65,14 +68,19 @@ class KeyboardViewController: UIInputViewController {
         for button in buttons3 {
             thrRow.addSubview(button)
         }
+        for button in buttons4 {
+            fthRow.addSubview(button)
+        }
         
         self.view.addSubview(topRow)
         self.view.addSubview(secRow)
         self.view.addSubview(thrRow)
+        self.view.addSubview(fthRow)
         
         addConstraints(buttons1, containingView: topRow)
         addConstraints(buttons2, containingView: secRow)
         addConstraints(buttons3, containingView: thrRow)
+        addConstraints(buttons4, containingView: fthRow)
  
         /* label - top left of keyboard */
         label = UILabel(frame: CGRectMake(0, 0, 160, 40))
@@ -82,7 +90,6 @@ class KeyboardViewController: UIInputViewController {
         
         /* suggestions - top right */
         self.view.addSubview(suggestionsContainer)
-        createSuggestion("a")
         
     }
     
@@ -96,7 +103,11 @@ class KeyboardViewController: UIInputViewController {
             button.translatesAutoresizingMaskIntoConstraints = false
             button.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
             button.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
-            button.addTarget(self, action: "keyPressed:", forControlEvents: .TouchUpInside)
+            if(title == "space"){
+                button.addTarget(self, action: "spacePressed:", forControlEvents: .TouchUpInside)
+            } else {
+                button.addTarget(self, action: "keyPressed:", forControlEvents: .TouchUpInside)
+            }
             buttons.append(button)
         }
     
@@ -109,6 +120,13 @@ class KeyboardViewController: UIInputViewController {
         (textDocumentProxy as UIKeyInput).insertText(title!)
         
         label!.text = label!.text! + title!
+    }
+    
+    func spacePressed(sender: AnyObject?) {
+        let button = sender as! UIButton
+        (textDocumentProxy as UIKeyInput).insertText(" ")
+        
+        createSuggestion(label!.text!)
     }
     
     func addConstraints(buttons: [UIButton], containingView: UIView){
