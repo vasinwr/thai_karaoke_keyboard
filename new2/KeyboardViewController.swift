@@ -161,6 +161,11 @@ class KeyboardViewController: UIInputViewController {
         (textDocumentProxy as UIKeyInput).insertText(title!)
         
         label!.text = ""
+        for button in suggestionsContainer.subviews {
+            UIView.animateWithDuration(0.2, animations: {
+                button.alpha = 0.0
+            })
+        }
     }
     
     func backspacePressed(sender: AnyObject?) {
@@ -209,7 +214,8 @@ class KeyboardViewController: UIInputViewController {
     }
     
     func createSuggestion(title : String) {
-        //TODO: clear suggestionsContainer
+        
+        suggestionsContainer.subviews.forEach({ $0.removeFromSuperview() })
         
         let suggestions = createSuggestionButtons(lookupSuggestions(title))
         
