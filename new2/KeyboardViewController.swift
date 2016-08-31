@@ -46,8 +46,8 @@ class KeyboardViewController: UIInputViewController {
         
         let buttonTitles1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
         let buttonTitles2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
-        let buttonTitles3 = ["Z", "X", "C", "V", "B", "N", "M"]
-        let buttonTitles4 = ["space", "bs"]
+        let buttonTitles3 = ["Z", "X", "C", "V", "B", "N", "M", "bs"]
+        let buttonTitles4 = ["space"]
         
         let buttons1 = createButtons(buttonTitles1)
         let buttons2 = createButtons(buttonTitles2)
@@ -56,7 +56,7 @@ class KeyboardViewController: UIInputViewController {
         
         let topRow = UIView(frame: CGRectMake(0, 40, 320, 40))
         let secRow = UIView(frame: CGRectMake(0, 80, 320, 40))
-        let thrRow = UIView(frame: CGRectMake(40, 120, 240, 40))
+        let thrRow = UIView(frame: CGRectMake(0, 120, 320, 40))
         let fthRow = UIView(frame: CGRectMake(0, 160, 320, 40))
         
         for button in buttons1 {
@@ -220,7 +220,7 @@ class KeyboardViewController: UIInputViewController {
         addConstraints(suggestions, containingView: suggestionsContainer)
         var delay = 0.0
         for button in suggestions {
-            delay += 0.2
+            delay += 0.1
             UIView.animateWithDuration(delay, animations: {
                 button.alpha = 1.0
             })
