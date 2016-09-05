@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		890DB6EF1D6620B4000B01D0 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890DB6EE1D6620B4000B01D0 /* KeyboardViewController.swift */; };
 		890DB6F31D6620B4000B01D0 /* new2.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 890DB6EC1D6620B4000B01D0 /* new2.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		892C348E1D7E136A00DF006D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C348D1D7E136A00DF006D /* Realm.framework */; };
+		892C348F1D7E136A00DF006D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 892C348D1D7E136A00DF006D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		892C34911D7E138700DF006D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C34901D7E138700DF006D /* RealmSwift.framework */; };
+		892C34921D7E138700DF006D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 892C34901D7E138700DF006D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		892C34931D7E13C200DF006D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C348D1D7E136A00DF006D /* Realm.framework */; };
+		892C34941D7E13C900DF006D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C34901D7E138700DF006D /* RealmSwift.framework */; };
+		892C34981D7E15B100DF006D /* WordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892C34971D7E15B100DF006D /* WordItem.swift */; };
 		892F2B081D66103800AB874F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F2B071D66103800AB874F /* AppDelegate.swift */; };
 		892F2B0A1D66103800AB874F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F2B091D66103800AB874F /* ViewController.swift */; };
 		892F2B0D1D66103800AB874F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F2B0B1D66103800AB874F /* Main.storyboard */; };
@@ -60,6 +67,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				892C34921D7E138700DF006D /* RealmSwift.framework in Embed Frameworks */,
+				892C348F1D7E136A00DF006D /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +81,9 @@
 		890DB6F01D6620B4000B01D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		892C348B1D7DEA8200DF006D /* NewCustomKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NewCustomKeyboard.entitlements; sourceTree = "<group>"; };
 		892C348C1D7DECEC00DF006D /* new2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = new2.entitlements; sourceTree = "<group>"; };
+		892C348D1D7E136A00DF006D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		892C34901D7E138700DF006D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		892C34971D7E15B100DF006D /* WordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordItem.swift; sourceTree = "<group>"; };
 		892F2B041D66103800AB874F /* NewCustomKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewCustomKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F2B071D66103800AB874F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		892F2B091D66103800AB874F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892C34941D7E13C900DF006D /* RealmSwift.framework in Frameworks */,
+				892C34931D7E13C200DF006D /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892C34911D7E138700DF006D /* RealmSwift.framework in Frameworks */,
+				892C348E1D7E136A00DF006D /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,9 +145,19 @@
 			path = new2;
 			sourceTree = "<group>";
 		};
+		892C34961D7E154B00DF006D /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				892C34971D7E15B100DF006D /* WordItem.swift */,
+			);
+			name = RealmModel;
+			sourceTree = "<group>";
+		};
 		892F2AFB1D66103800AB874F = {
 			isa = PBXGroup;
 			children = (
+				892C34901D7E138700DF006D /* RealmSwift.framework */,
+				892C348D1D7E136A00DF006D /* Realm.framework */,
 				892F2B061D66103800AB874F /* NewCustomKeyboard */,
 				892F2B1B1D66103800AB874F /* NewCustomKeyboardTests */,
 				892F2B261D66103800AB874F /* NewCustomKeyboardUITests */,
@@ -154,6 +180,7 @@
 		892F2B061D66103800AB874F /* NewCustomKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				892C34961D7E154B00DF006D /* RealmModel */,
 				892C348B1D7DEA8200DF006D /* NewCustomKeyboard.entitlements */,
 				892F2B071D66103800AB874F /* AppDelegate.swift */,
 				892F2B091D66103800AB874F /* ViewController.swift */,
@@ -212,6 +239,7 @@
 				892F2B021D66103800AB874F /* Resources */,
 				890DB6E71D66109F000B01D0 /* Embed App Extensions */,
 				892C347E1D7DC29400DF006D /* Embed Frameworks */,
+				892C34951D7E141E00DF006D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -352,6 +380,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		892C34951D7E141E00DF006D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		890DB6E81D6620B4000B01D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -366,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				892F2B0A1D66103800AB874F /* ViewController.swift in Sources */,
+				892C34981D7E15B100DF006D /* WordItem.swift in Sources */,
 				892F2B081D66103800AB874F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +475,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = new2/new2.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = new2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vasinwr.NewCustomKeyboard.new2;
@@ -442,6 +491,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = new2/new2.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = new2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vasinwr.NewCustomKeyboard.new2;

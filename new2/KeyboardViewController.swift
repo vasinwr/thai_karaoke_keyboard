@@ -13,6 +13,7 @@ class KeyboardViewController: UIInputViewController {
     var label :UILabel? = nil
     let suggestionsContainer = UIView(frame: CGRectMake(160, 0, 160, 40))
     let defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.vasinwr.ThaiKaraokeKeyboard")!
+    
 
     @IBOutlet var nextKeyboardButton: UIButton!
 
