@@ -9,11 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let defaults = NSUserDefaults(suiteName:"group.vasinwr.ThaiKaraokeKeyboard")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("anything")
+        defaults!.setInteger(25, forKey: "x")
     }
 
     override func didReceiveMemoryWarning() {

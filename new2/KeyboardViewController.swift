@@ -12,6 +12,7 @@ class KeyboardViewController: UIInputViewController {
     
     var label :UILabel? = nil
     let suggestionsContainer = UIView(frame: CGRectMake(160, 0, 160, 40))
+    let defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.vasinwr.ThaiKaraokeKeyboard")!
 
     @IBOutlet var nextKeyboardButton: UIButton!
 
@@ -91,6 +92,8 @@ class KeyboardViewController: UIInputViewController {
         /* suggestions - top right */
         self.view.addSubview(suggestionsContainer)
         
+        //read from shared container
+        print(defaults.integerForKey("x"))
     }
     
     func createButtons(titles: [String]) -> [UIButton] {
