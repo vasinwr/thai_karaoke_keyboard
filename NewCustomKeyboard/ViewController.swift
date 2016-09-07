@@ -12,6 +12,7 @@ import RealmSwift
 class ViewController: UIViewController {
     
     let defaults = NSUserDefaults(suiteName:"group.vasinwr.ThaiKaraokeKeyboard")
+    let defaultCenter = NSNotificationCenter.defaultCenter()
     
     //to see if realm works
     /*
@@ -21,8 +22,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        defaultCenter.addObserver(self, selector: #selector(wordKeyChanged), name: NSUserDefaultsDidChangeNotification, object: nil)
+        
         print("anything")
-        defaults!.setInteger(25, forKey: "x")
         
         //to see if realm works
         /*
@@ -30,6 +33,15 @@ class ViewController: UIViewController {
         datasource = realm.objects(WordItem)
         print(datasource)
         */
+        
+    }
+    
+    @objc func wordKeyChanged() {
+        print("wordKeyChanged called")
+        let wordKey = defaults?.objectForKey("wordKey") as! String
+        print(wordKey + " received in containing app") // TODO: change this line to realm query
+        defaults?.setObject(["ddd","eee"], forKey: "wordSuggestions")
+        //defaults?.synchronize()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +52,11 @@ class ViewController: UIViewController {
     @IBAction func actionSaveData(sender: AnyObject) {
         print("saved")
         saveWord("pom", value:"ผม")
+        /* change defaults to see if notification is fired (it is only within same process)
+        defaults!.setObject("hey", forKey: "wordKey")
+        print("ho")
+        //defaults?.synchronize()
+        */
     }
     
     func saveWord(key:String, value:String) {

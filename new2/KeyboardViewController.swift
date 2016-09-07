@@ -94,7 +94,7 @@ class KeyboardViewController: UIInputViewController {
         self.view.addSubview(suggestionsContainer)
         
         //read from shared container
-        print(defaults.integerForKey("x"))
+        //print(defaults.objectForKey("values"))
     }
     
     func createButtons(titles: [String]) -> [UIButton] {
@@ -241,7 +241,12 @@ class KeyboardViewController: UIInputViewController {
     
     /* now a dummy function. TODO: implement real lookup */
     func lookupSuggestions(title: String) -> [String] {
-        return ["ครับ" , "คับ", "ขับ"]
+        defaults.setObject(title, forKey: "wordKey")
+        print(defaults.objectForKey("wordKey") as! String)
+        defaults.synchronize()
+        print(defaults.objectForKey("wordSuggestions") as! [String])
+        return defaults.objectForKey("wordSuggestions") as! [String]
+        //return ["ครับ" , "คับ", "ขับ"]
     }
 
     
