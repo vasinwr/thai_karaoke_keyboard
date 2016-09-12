@@ -245,12 +245,13 @@ class KeyboardViewController: UIInputViewController {
     func lookupSuggestions(title: String) -> [String] {
         wormhole.passMessageObject("titleString", identifier: "messageIdentifier")
         
-        defaults.setObject(title, forKey: "wordKey")
-        print(defaults.objectForKey("wordKey") as! String)
-        defaults.synchronize()
-        print(defaults.objectForKey("wordSuggestions") as! [String])
-        return defaults.objectForKey("wordSuggestions") as! [String]
-        //return ["ครับ" , "คับ", "ขับ"]
+        
+        //defaults.setObject(title, forKey: "wordKey")
+        //print(defaults.objectForKey("wordKey") as! String)
+        //defaults.synchronize()
+        //print(defaults.objectForKey("wordSuggestions") as! [String])
+        //return defaults.objectForKey("wordSuggestions") as! [String]
+        return ["ครับ" , "คับ", "ขับ"]
     }
 
     
