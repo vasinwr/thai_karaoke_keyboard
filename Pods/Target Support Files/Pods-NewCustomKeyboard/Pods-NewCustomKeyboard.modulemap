@@ -1,0 +1,6 @@
+framework module Pods_NewCustomKeyboard {
+  umbrella header "Pods-NewCustomKeyboard-umbrella.h"
+
+  export *
+  module * { export * }
+}

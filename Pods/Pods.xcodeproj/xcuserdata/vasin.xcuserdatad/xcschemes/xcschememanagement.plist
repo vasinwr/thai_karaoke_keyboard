@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>MMWormhole.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+		</dict>
+		<key>Pods-NewCustomKeyboard.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NewCustomKeyboardTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NewCustomKeyboardUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-new2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>36578A34A96352515A9FBFBFAFB82BE0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>40AC9FECFD6F416AF8AB17F9CE9BEC1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7BC8FFA80AB7E1BD3EC4B29E027C65D1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>908F0C4FE29383A0C6E796255AC70660</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA2550D7D94491C4B4EA8F3435FEEC4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

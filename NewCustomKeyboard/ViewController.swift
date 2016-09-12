@@ -8,11 +8,13 @@
 
 import UIKit
 import RealmSwift
+import MMWormhole
 
 class ViewController: UIViewController {
     
     let defaults = NSUserDefaults(suiteName:"group.vasinwr.ThaiKaraokeKeyboard")
     let defaultCenter = NSNotificationCenter.defaultCenter()
+    let wormhole = MMWormhole(applicationGroupIdentifier: "group.vasinwr.ThaiKaraokeKeyboard", optionalDirectory: "wormhole")
     
     //to see if realm works
     /*
@@ -33,6 +35,12 @@ class ViewController: UIViewController {
         datasource = realm.objects(WordItem)
         print(datasource)
         */
+        
+        wormhole.listenForMessageWithIdentifier("messageIdentifier", listener: { (messageObject) -> Void in
+            if let message: AnyObject = messageObject {
+                print("aeh")
+            }
+        })
         
     }
     

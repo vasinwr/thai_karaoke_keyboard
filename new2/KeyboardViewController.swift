@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MMWormhole
 
 class KeyboardViewController: UIInputViewController {
     
     var label :UILabel? = nil
     let suggestionsContainer = UIView(frame: CGRectMake(160, 0, 160, 40))
     let defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.vasinwr.ThaiKaraokeKeyboard")!
+    let wormhole = MMWormhole(applicationGroupIdentifier: "group.vasinwr.ThaiKaraokeKeyboard", optionalDirectory: "wormhole")
     
 
     @IBOutlet var nextKeyboardButton: UIButton!
@@ -241,6 +243,8 @@ class KeyboardViewController: UIInputViewController {
     
     /* now a dummy function. TODO: implement real lookup */
     func lookupSuggestions(title: String) -> [String] {
+        wormhole.passMessageObject("titleString", identifier: "messageIdentifier")
+        
         defaults.setObject(title, forKey: "wordKey")
         print(defaults.objectForKey("wordKey") as! String)
         defaults.synchronize()
